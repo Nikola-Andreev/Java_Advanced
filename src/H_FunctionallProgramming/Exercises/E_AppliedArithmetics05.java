@@ -17,21 +17,11 @@ public class E_AppliedArithmetics05 {
                 break;
             }
             switch (input){
-                case "print":System.out.println(
-                        Arrays.toString(inputNumbers).replace("]","").replace("[","").replace(",",""));break;
-                case "add": inputNumbers = transformArray(inputNumbers, "+");break;
-                case "multiply" : inputNumbers = transformArray(inputNumbers, "*");break;
-                case "subtract" : inputNumbers = transformArray(inputNumbers, "-");break;
+                case "print":System.out.println(Arrays.toString(inputNumbers).replace("]","").replace("[","").replace(",",""));break;
+                case "add": inputNumbers = Arrays.stream(inputNumbers).map(a -> a + 1 ).toArray();break;
+                case "multiply" : inputNumbers = Arrays.stream(inputNumbers).map(a -> a * 2 ).toArray();break;
+                case "subtract" : inputNumbers = Arrays.stream(inputNumbers).map(a -> a - 1 ).toArray();break;
             }
-        }
-    }
-
-    private static int[] transformArray(int[] inputNumbers, String s) {
-        switch (s){
-            case "+": return Arrays.stream(inputNumbers).map(a -> a + 1 ).toArray();
-            case "-": return Arrays.stream(inputNumbers).map(a -> a - 1 ).toArray();
-            case "*": return Arrays.stream(inputNumbers).map(a -> a * 2 ).toArray();
-            default: return null;
         }
     }
 }
