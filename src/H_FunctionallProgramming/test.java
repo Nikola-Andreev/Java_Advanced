@@ -1,6 +1,10 @@
 package H_FunctionallProgramming;
 
-class test {
+import java.io.IOException;
 
+class test {
+    public static void main(String[] args) throws IOException {
+
+    }
 }
 
